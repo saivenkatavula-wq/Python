@@ -1,0 +1,14 @@
+#using log method - not accurate even with math method
+import math
+def check_power_of_number(x,y):
+    res = math.log(y)/math.log(x)
+    return res.is_integer()
+print(check_power_of_number(5,125))
+
+# loop method - accurate
+def check_power_of_number(x,y):
+    res = 1
+    while res < y:
+        res = res * x
+    return res == y
+print(check_power_of_number(5,125))
